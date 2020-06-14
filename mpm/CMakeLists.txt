@@ -125,7 +125,7 @@ if(_has_no_psabi)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-psabi")
 endif(_has_no_psabi)
 set(MPM_ALL_DEVICES n3xx e320 e31x tests)
-set(MPM_DEVICE "n3xx" CACHE STRING "Choose an MPM device to build")
+#set(MPM_DEVICE "n3xx" CACHE STRING "Choose an MPM device to build")
 set_property(CACHE MPM_DEVICE PROPERTY STRINGS ${MPM_ALL_DEVICES})
 # Validate MPM_DEVICE
 list(FIND MPM_ALL_DEVICES ${MPM_DEVICE} mpm_device_check)
