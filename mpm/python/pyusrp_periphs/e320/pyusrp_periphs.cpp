@@ -18,11 +18,13 @@ PYBIND11_DECLARE_HOLDER_TYPE(T, boost::shared_ptr<T>);
 #include <mpm/dboards/neon_manager.hpp>
 #include <mpm/spi/spi_python.hpp>
 #include <mpm/types/types_python.hpp>
+#include <mpm/i2c/i2c_python.hpp>
 
 PYBIND11_MODULE(libpyusrp_periphs, m)
 {
     export_types(m);
     export_spi(m);
+    export_i2c(m);
     export_catalina(m);
     export_neon(m);
 }
