@@ -278,7 +278,7 @@ void usrp_sulfur_eeprom_to_file(struct usrp_sulfur_eeprom *ep, const char *path)
 	size_t len = sizeof(*ep);
 	size_t got = 0;
 
-	fd = open(path, O_WRONLY | O_CREAT);
+	fd = open(path, O_WRONLY | O_CREAT,755);
 	if (fd < 0) {
 		perror("Could not open file:\n");
 		return;
@@ -303,7 +303,7 @@ void usrp_sulfur_db_eeprom_to_file(struct usrp_sulfur_db_eeprom *ep, const char 
 	size_t len = sizeof(*ep);
 	size_t got = 0;
 
-	fd = open(path, O_WRONLY | O_CREAT);
+	fd = open(path, O_WRONLY | O_CREAT,755);
 	if (fd < 0) {
 		perror("Could not open file:\n");
 		return;
@@ -397,7 +397,7 @@ void usrp_sulfur_eeprom_to_i2c(struct usrp_sulfur_eeprom *ep, const char *path)
 	size_t len = sizeof(*ep);
 	size_t i;
 
-	fd = open(path, O_WRONLY | O_CREAT);
+	fd = open(path, O_WRONLY | O_CREAT,755);
 	if (fd < 0) {
 		perror("Could not open file:\n");
 		return;
