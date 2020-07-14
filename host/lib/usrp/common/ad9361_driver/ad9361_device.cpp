@@ -1327,7 +1327,8 @@ double ad9361_device_t::_tune_helper(direction_t direction, const double value)
             _regs.inputsel = (_regs.inputsel & 0xC0) | 0x30; // Port C, balanced
         } else if ((value >= _client_params->get_band_edge(AD9361_RX_BAND0))
                    && (value < _client_params->get_band_edge(AD9361_RX_BAND1))) {
-            _regs.inputsel = (_regs.inputsel & 0xC0) | 0x0C; // Port B, balanced
+            //_regs.inputsel = (_regs.inputsel & 0xC0) | 0x0C; // Port B, balanced for AD9361
+	    _regs.inputsel = (_regs.inputsel & 0xC0) | 0x03; // Port A, balanced
         } else if ((value >= _client_params->get_band_edge(AD9361_RX_BAND1))
                    && (value <= 6e9)) {
             _regs.inputsel = (_regs.inputsel & 0xC0) | 0x03; // Port A, balanced
@@ -1367,7 +1368,8 @@ double ad9361_device_t::_tune_helper(direction_t direction, const double value)
 
         /* Set band-specific settings. */
         if (value < _client_params->get_band_edge(AD9361_TX_BAND0)) {
-            _regs.inputsel = _regs.inputsel | 0x40;
+            //_regs.inputsel = _regs.inputsel | 0x40;
+	    _regs.inputsel = _regs.inputsel & 0xBF;
         } else if ((value >= _client_params->get_band_edge(AD9361_TX_BAND0))
                    && (value <= 6e9)) {
             _regs.inputsel = _regs.inputsel & 0xBF;
