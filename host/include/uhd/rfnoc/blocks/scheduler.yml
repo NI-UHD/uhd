@@ -3,7 +3,7 @@ module_name: scheduler
 version: 1.0
 rfnoc_version: 1.0
 chdr_width: 64
-noc_id: 0xAAAA
+noc_id: 0xDDD00000
 
 clocks:
   - name: rfnoc_chdr
