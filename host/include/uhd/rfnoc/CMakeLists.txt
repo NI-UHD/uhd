@@ -40,6 +40,7 @@ UHD_INSTALL(FILES
     fosphor_block_control.hpp
     null_block_control.hpp
     radio_control.hpp
+    scheduler_block_control.hpp
     split_stream_block_control.hpp
     vector_iir_block_control.hpp
 
